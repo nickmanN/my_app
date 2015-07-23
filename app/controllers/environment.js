@@ -11,8 +11,10 @@ export default Ember.Controller.extend({
 		var login = this.get('login');
 		login !== '' ? this.set('isAuth', true) : this.set('isAuth', false);
 
-		console.info(this.isAuth);
-		console.info(this.login);
+		console.info('isAuth variable state: ' + this.isAuth);
+		console.info('login field: ' + this.login);
+
+		return this.get('isAuth');
 
 	}.observes('login').on('init')
 });
