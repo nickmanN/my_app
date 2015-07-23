@@ -5,13 +5,15 @@
 		<div class="col-md-4">
 			<h2 class="text-center">This is login page</h2>
 			<p class="text-center">Please specify your login</p>
-			<form>
-				{{input type="text" value=login}}
-				{{input type="button" value="submit" action='submit'}}
+			<form {{action "checkAuth" on="submit"}}>
+				{{input type="text" value=controllers.environment.login}}
+				<button type="submit">Submit</button>
 			</form>
 {{!-- 			{{#if isSubmited}}
 				<button {{action 'toggleProperty' 'isExpanded'}}>Move to index</button>
 			{{/if}} --}}
+			<br>
+			<p>Your login is "{{controllers.environment.login}}". Auth state is "{{controllers.environment.isAuth}}"</p>
 		</div>
 		<div class="col-md-4"></div>
 	</div>
